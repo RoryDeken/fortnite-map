@@ -1,8 +1,15 @@
 #map select {
   display: block;
   margin: auto;
-
 }
 img {
   max-width:100%;
+  }
+
+  #leafLetMap {
+    height: 100vh;
+    width:100vw;
+    position: absolute;
+    left: 0;
+    top: 0;
   }

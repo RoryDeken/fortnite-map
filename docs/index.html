@@ -20,78 +20,27 @@
   </head>
 
   <body>
+    <nav >
+      <ul>
+        <li><a href="/"  class="active">Map</a></li> <span>|</span>
+        <li><a href="/past-seasons/">Past Maps</a></li>
+      </ul>
+    </nav>
 
-    <section class="py-5 mt-5">
-      <div class="container">
-        <h1>Interactive Fortnite Map</h1>
-        <div class="row">
-          <div class="col-xs-12">
+<div id="leafLetMap"></div>
 
-          <div id="map">
-            <select v-model="selected" class="m-">
-              <option v-for="(season, index) in seasons" v-bind:value="index">
-                Season {{ index + 1}}
-              </option>
-            </select>
 
-          <img v-bind:src="seasons[selected]"/> 
-          </div>
-          <div id="leafLetMap"></div>
-        </div>
-      </div>
-    </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Fortnite Map 2018</p>
-      </div>
-      <!-- /.container -->
-    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js" integrity="sha256-tfcLorv/GWSrbbsn6NVgflWp1YOmTjyJ8HWtfXaOaJc=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
     <script>
-    const NotFound = { template: '<p>Page not found</p>' }
-const Home = { template: '<p>Here</p>' }
-const Seasons = { template: '<p>Past Seasons</p>' }
-
-const routes = {
-  '/': Home,
-  '/seasons': Seasons
-}
-
-    var vm = new Vue({
-      el: "#map",
-    data: {
-      seasons: [
-        'map/seasons/szn1.jpg',
-        'map/seasons/szn2.jpg',
-        'map/seasons/szn3.jpg',
-        'map/seasons/szn4.jpg',
-        'map/seasons/szn5.jpg',
-        'map/seasons/szn6.jpg',
-        'map/seasons/szn7.jpg',
-      ],
-      selected: 6,
-      currentRoute: window.location.pathname
-    },
-    computed: {
-    ViewComponent () {
-      return routes[this.currentRoute] || NotFound
+    var map = L.map('leafLetMap', {maxZoom:6});
+    if(window.innerWidth > 980){
+      map.setView([0, 0], 2);
+    }else {
+      map.setView([0, 0], 0);
     }
-  },
-  render (h) { return h(this.ViewComponent) }
-});
 
-
-
-    </script>
-    <script>
-    var map = L.map('leafLetMap', {maxZoom:6, minZoom:2}).setView([0, 0], 2);
-    map.setMaxBounds(map.getBounds());
-L.tileLayer('./map/currentMapTiles/{z}{x}{y}.jpg', {noWrap:true}).addTo(map);
+L.tileLayer('./map/mapTiles/{z}/{x}{y}.jpg', {noWrap:true}).addTo(map);
 /*
 L.marker([51.5, -0.09]).addTo(map)
     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')

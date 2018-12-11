@@ -3,13 +3,13 @@
     <nav>
       <ul class="menu">
         <li class="menu-item">
-          <a href="/map" class="menu-item-link">Map</a>
+          <router-link to="/" class="menu-item-link">Map</router-link>
         </li>
         <li class="menu-item">
-          <a href="/seasons" class="menu-item-link">Past Seasons</a>
+          <router-link to="/seasons" class="menu-item-link">Past Seasons</router-link>
         </li>
         <li class="menu-item">
-          <a class="donate" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=52U22VZKEQGCN&currency_code=USD&source=url">Donate</a>
+          <a class="donate" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=52U22VZKEQGCN&currency_code=USD&source=url" target="_blank">Donate</a>
         </li>
       </ul>
 

@@ -9,7 +9,7 @@
      >
      <l-tile-layer :url="url" :options="{noWrap: true}" />
       <div v-for="marker in markers" v-bind:key="marker.id">
-       <l-marker :lat-lng="marker.latLng"/>
+       <l-marker :lat-lng="marker.latLng" :draggable="false"/>
      </div>
    </l-map>
  </div>

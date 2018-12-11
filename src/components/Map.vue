@@ -1,19 +1,23 @@
 <template>
   <div id="map">
     <l-map
-       style="height: 100%; width: 100%"
        :zoom="zoom"
        :center="center"
-       maxZoom="6"
+       :maxZoom="maxZoom"
+       @click="clickHandler($event)"
+       :options="mapOptions"
      >
-     <l-tile-layer :url="url" :options="{noWrap: true}"/>
-     <l-marker :lat-lng="markerLatLng" />
+     <l-tile-layer :url="url" :options="{noWrap: true}" />
+      <div v-for="marker in markers" v-bind:key="marker.id">
+       <l-marker :lat-lng="marker.latLng"/>
+     </div>
    </l-map>
  </div>
 </template>
 
 <script>
   import {L, LMap, LTileLayer, LMarker } from 'vue2-leaflet';
+  import ax from 'axios'
   import 'leaflet/dist/leaflet.css'
   delete L.Icon.Default.prototype._getIconUrl;
   L.Icon.Default.mergeOptions({
@@ -22,18 +26,36 @@
     shadowUrl: require('leaflet/dist/images/marker-shadow.png')
   });
   export default {
+  props: {
+  markers: []
+  },
   components: {
     LMap,
     LTileLayer,
     LMarker
   },
+  methods: {
+    clickHandler: function(e){
+    // eslint-disable-next-line
+      console.log(e.latlng)
+    }
+  },
   data () {
     return {
       url: '/map/mapTiles/{z}/{x}{y}.jpg',
-      zoom: 3,
+      zoom: 2,
+      maxZoom:6,
       center: [0,0],
-      markerLatLng: [0,0]
+      mapOptions: {}
     };
+  },
+  mounted () {
+    ax
+      .get('map/markers/markers.json')
+      .then(response => (
+        this.markers = response.data
+      ))
+
   }
 }
 </script>

@@ -4,10 +4,11 @@
     "type": "treasure",
     "label": "First Marker",
     "hint": "Marker description here",
+    "draggable":false,
     "latLng":
       {
-        "lat":10,
-        "lng":0
+        "lat":30,
+        "lng":10
       }
   },
   {
@@ -15,10 +16,11 @@
     "type": "treasure",
     "label": "Second Marker",
     "hint": "Marker description here",
+    "draggable":false,
     "latLng":
       {
         "lat":30,
-        "lng":3
+        "lng":33
       }
   }
 

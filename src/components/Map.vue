@@ -1,5 +1,6 @@
 <template>
   <div id="map">
+    <a v-on:click="addMarker">Click</a>
     <l-map
        :zoom="zoom"
        :center="center"
@@ -9,7 +10,7 @@
      >
      <l-tile-layer :url="url" :options="{noWrap: true}" />
       <div v-for="marker in markers" v-bind:key="marker.id">
-       <l-marker :lat-lng="marker.latLng" :draggable="false"/>
+       <l-marker :lat-lng="marker.latLng" :draggable="marker.draggable"/>
      </div>
    </l-map>
  </div>
@@ -26,9 +27,6 @@
     shadowUrl: require('leaflet/dist/images/marker-shadow.png')
   });
   export default {
-  props: {
-  markers: []
-  },
   components: {
     LMap,
     LTileLayer,
@@ -38,6 +36,21 @@
     clickHandler: function(e){
     // eslint-disable-next-line
       console.log(e.latlng)
+    },
+    addMarker: function(){
+      console.log('added');
+      this.markers.push({
+    "id":3,
+    "type": "treasure",
+    "label": "First Marker",
+    "hint": "Marker description here",
+    "draggable":true,
+    "latLng":
+      {
+        "lat":10,
+        "lng":0
+      }
+  },)
     }
   },
   data () {
@@ -46,7 +59,8 @@
       zoom: 2,
       maxZoom:6,
       center: [0,0],
-      mapOptions: {}
+      mapOptions: {},
+      markers: []
     };
   },
   mounted () {

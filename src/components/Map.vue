@@ -1,6 +1,14 @@
 <template>
   <div id="map">
-    <a v-on:click="addMarker">Click</a>
+    <div class="controls">
+      <button v-on:click="addMarker">Add Marker</button>
+      <select>
+        <option value="blue">Plane</option>
+        <option value="gold">chest</option>
+        <option value="purple">vending machine <i></i></option>
+      </select>
+      <button v-on:click="saveMarkers">Save Markers</button>
+    </div>
     <l-map
        :zoom="zoom"
        :center="center"
@@ -10,7 +18,7 @@
      >
      <l-tile-layer :url="url" :options="{noWrap: true}" />
       <div v-for="marker in markers" v-bind:key="marker.id">
-       <l-marker :lat-lng="marker.latLng" :draggable="marker.draggable"/>
+       <l-marker :lat-lng="marker.latLng" :draggable="marker.draggable" />
      </div>
    </l-map>
  </div>
@@ -51,6 +59,16 @@
         "lng":0
       }
   },)
+    },
+    saveMarkers: function(){
+    console.log(this.markers);
+      ax.post('/saveMarkers', this.markers)
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
     }
   },
   data () {

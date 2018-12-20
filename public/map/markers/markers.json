@@ -4,6 +4,9 @@
     "type": "treasure",
     "label": "First Marker",
     "hint": "Marker description here",
+    "icon": {
+      "iconUrl": "/map/markers/img/marker-icon-2x-green.png"
+    },
     "draggable":false,
     "latLng":
       {

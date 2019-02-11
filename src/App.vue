@@ -40,12 +40,13 @@ justify-content:center;
 nav {
 display:flex;
 justify-content:center;
-flex-basis:50%;
+flex-basis:100%;
 min-height:50px;
 align-items:center;
 }
 nav ul {
 display:flex;
+flex-basis:50%;
 padding-left:0;
 margin:0;
 justify-content:space-evenly;

@@ -3,7 +3,7 @@
     <div class="controls-wrapper">
     <h2>Season {{ currentSeason }} Challenges</h2>
     <section class="challenges" v-for="week in weeks">
-      <div class="week" v-bind:class="{ active: week.active }">
+      <div class="week" v-bind:class="{active:week.active }">
       <h3>{{ week.weekNumber}} </h3>
       <span v-for="challenge in week.challenges">
           {{challenge.name}}
@@ -80,6 +80,17 @@
         {
         weekNumber: 1,
         active: false,
+        challenges:[
+          {name: 'challenge',
+          location:'location'
+          },
+          {name: 'challenge 2',
+          location:'location 2'
+          },
+        ]},
+        {
+        weekNumber: 2,
+        active: true,
         challenges:[
           {name: 'challenge',
           location:'location'

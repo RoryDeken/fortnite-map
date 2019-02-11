@@ -1,7 +1,18 @@
 <template>
   <div id="map">
+    <div class="controls-wrapper">
+    <h2>Season {{ currentSeason }} Challenges</h2>
+    <section class="challenges" v-for="week in weeks">
+      <div class="week" v-bind:class="{ active: week.active }">
+      <h3>{{ week.weekNumber}} </h3>
+      <span v-for="challenge in week.challenges">
+          {{challenge.name}}
+      </span>
+      </div>
+    </section>
     <div class="controls">
       <button v-on:click="addMarker">Add Marker</button>
+      </div>
     </div>
     <l-map
        id="mapContainer"
@@ -63,7 +74,21 @@
       maxZoom:6,
       center: [0,0],
       mapOptions: {},
-      markers: []
+      markers: [],
+      currentSeason: 7,
+      weeks: [
+        {
+        weekNumber: 1,
+        active: false,
+        challenges:[
+          {name: 'challenge',
+          location:'location'
+          },
+          {name: 'challenge 2',
+          location:'location 2'
+          },
+        ]},
+      ]
     };
   },
   mounted () {
@@ -82,17 +107,47 @@ height:100%;
 width:100%;
 display:flex;
 justify-content:center;
-flex-wrap:no-wrap;
-}
-#map .controls {
-flex-grow:1;
-flex-basis:20%;
-display:flex;
-align-items:flex-start;
-justify-content:center;
+flex-wrap:nowrap;
 }
 #map #mapContainer {
 flex-grow:4;
 flex-basis:20%;
+}
+#map .controls-wrapper {
+flex-grow:1;
+flex-basis:20%;
+display:flex;
+align-items:flex-start;
+align-content:flex-start;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+#map .controls-wrapper h2,  #map .controls-wrapper .challenges  {
+display:flex;
+flex-basis:100%;
+justify-content:center;
+align-items:flex-start;
+}
+#map .controls-wrapper .challenges {
+align-content:flex-start;
+}
+#map .controls-wrapper .challenges .week{
+display:flex;
+flex-basis:50%;
+justify-content:center;
+align-content:space-around;
+flex-wrap:wrap;
+}
+#map .controls-wrapper .challenges .week h3, #map .controls-wrapper .challenges .week span {
+display:flex;
+flex:1 100%;
+justify-content:center;
+}
+#map .controls {
+flex: 1 100%;
+justify-content:center;
+display:flex;
+align-items:flex-start;
 }
 </style>

@@ -2,14 +2,9 @@
   <div id="map">
     <div class="controls">
       <button v-on:click="addMarker">Add Marker</button>
-      <select>
-        <option value="blue">Plane</option>
-        <option value="gold">chest</option>
-        <option value="purple">vending machine <i></i></option>
-      </select>
-      <button v-on:click="saveMarkers">Save Markers</button>
     </div>
     <l-map
+       id="mapContainer"
        :zoom="zoom"
        :center="center"
        :maxZoom="maxZoom"
@@ -59,16 +54,6 @@
         "lng":0
       }
   },)
-    },
-    saveMarkers: function(){
-    console.log(this.markers);
-      ax.post('/saveMarkers', this.markers)
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
     }
   },
   data () {
@@ -91,10 +76,23 @@
   }
 }
 </script>
-<style scoped>
+<style>
 #map {
 height:100%;
 width:100%;
-display:block;
+display:flex;
+justify-content:center;
+flex-wrap:no-wrap;
+}
+#map .controls {
+flex-grow:1;
+flex-basis:20%;
+display:flex;
+align-items:flex-start;
+justify-content:center;
+}
+#map #mapContainer {
+flex-grow:4;
+flex-basis:20%;
 }
 </style>

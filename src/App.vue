@@ -12,7 +12,6 @@
           <a class="donate" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=52U22VZKEQGCN&currency_code=USD&source=url" target="_blank">Donate</a>
         </li>
       </ul>
-
     </nav>
     <router-view></router-view>
   </div>
@@ -30,23 +29,29 @@ html,body, #app {
   width:100vw;
   padding:0;
   margin:0;
+
+}
+#app {
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+
 }
 nav {
-width:25%;
-right:0;
-display:block;
-position:fixed;
-z-index:999;
-background:#2a2a2a;
-color:white;
+display:flex;
+justify-content:center;
+flex-basis:50%;
+min-height:50px;
+align-items:center;
 }
-nav li {
+nav ul {
+display:flex;
+padding-left:0;
+margin:0;
+justify-content:space-evenly;
+flex:1;
+}
+nav ul li {
 list-style:none;
-display:inline-block;
-margin-left:10px;
-}
-nav a {
-color:white;
-
 }
 </style>

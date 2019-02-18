@@ -15,13 +15,13 @@
     data() {
       return {
         seasons: [
-          '/map/seasons/szn1.jpg',
-          '/map/seasons/szn2.jpg',
-          '/map/seasons/szn3.jpg',
-          '/map/seasons/szn4.jpg',
-          '/map/seasons/szn5.jpg',
-          '/map/seasons/szn6.jpg',
-          '/map/seasons/szn7.jpg',
+          '/map/seasons/small/szn1.jpg',
+          '/map/seasons/small/szn2.jpg',
+          '/map/seasons/small/szn3.jpg',
+          '/map/seasons/small/szn4.jpg',
+          '/map/seasons/small/szn5.jpg',
+          '/map/seasons/small/szn6.jpg',
+          '/map/seasons/small/szn7.jpg',
         ],
         selected: 6
         }

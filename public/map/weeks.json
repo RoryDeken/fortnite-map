@@ -1,0 +1,9 @@
+[{
+	"weekNumber": 1,
+	"active": false,
+	"challenges": [{
+		"name": "challenge",
+		"location": "location",
+		"description": "This is the description of the challenge"
+	}]
+}]

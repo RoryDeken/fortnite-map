@@ -4,9 +4,10 @@
     <h2>Season {{ currentSeason }} Challenges</h2>
     <section class="challenges" v-for="week in weeks">
       <div class="week" v-bind:class="{active:week.active }">
-      <h3>{{ week.weekNumber}} </h3>
+      <h3>Week {{ week.weekNumber}} </h3>
       <span v-for="challenge in week.challenges">
-          {{challenge.name}}
+          <h4>{{challenge.name}}</h4>
+          <p>{{challenge.description}}</p>
       </span>
       </div>
     </section>
@@ -31,7 +32,7 @@
 </template>
 
 <script>
-  import {L, LMap, LTileLayer, LMarker } from 'vue2-leaflet';
+  import {L, LMap, LTileLayer, LMarker } from 'vue2-leaflet'
   import ax from 'axios'
   import 'leaflet/dist/leaflet.css'
   delete L.Icon.Default.prototype._getIconUrl;
@@ -70,36 +71,13 @@
   data () {
     return {
       url: '/map/mapTiles/{z}/{x}{y}.jpg',
-      zoom: 2,
+      zoom: 3,
       maxZoom:6,
       center: [0,0],
       mapOptions: {},
       markers: [],
       currentSeason: 7,
-      weeks: [
-        {
-        weekNumber: 1,
-        active: false,
-        challenges:[
-          {name: 'challenge',
-          location:'location'
-          },
-          {name: 'challenge 2',
-          location:'location 2'
-          },
-        ]},
-        {
-        weekNumber: 2,
-        active: true,
-        challenges:[
-          {name: 'challenge',
-          location:'location'
-          },
-          {name: 'challenge 2',
-          location:'location 2'
-          },
-        ]},
-      ]
+      weeks: {}
     };
   },
   mounted () {
@@ -108,6 +86,11 @@
       .then(response => (
         this.markers = response.data
       ))
+      ax
+        .get('map/weeks.json')
+        .then(response => (
+          this.weeks = response.data
+        ))
 
   }
 }
@@ -121,12 +104,11 @@ justify-content:center;
 flex-wrap:nowrap;
 }
 #map #mapContainer {
-flex-grow:4;
-flex-basis:20%;
+flex-basis:80%;
 }
 #map .controls-wrapper {
 flex-grow:1;
-flex-basis:20%;
+flex-basis:10%;
 display:flex;
 align-items:flex-start;
 align-content:flex-start;
@@ -154,6 +136,10 @@ flex-wrap:wrap;
 display:flex;
 flex:1 100%;
 justify-content:center;
+flex-wrap:wrap;
+}
+#map .controls-wrapper .challenges .week h3, #map .controls-wrapper .challenges .week span > * {
+margin:auto;
 }
 #map .controls {
 flex: 1 100%;

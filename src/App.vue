@@ -43,6 +43,8 @@ justify-content:center;
 flex-basis:100%;
 min-height:50px;
 align-items:center;
+background:#2A2A2A;
+
 }
 nav ul {
 display:flex;
@@ -54,5 +56,13 @@ flex:1;
 }
 nav ul li {
 list-style:none;
+}
+nav ul li a {
+color:#CCC;
+text-decoration:none;
+font-size:14px;
+}
+nav ul li a:hover, nav ul li a:focus {
+color:#FFF;
 }
 </style>

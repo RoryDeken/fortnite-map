@@ -1,9 +1,191 @@
 [{
 	"weekNumber": 1,
-	"active": false,
+	"active": true,
+	"show":false,
 	"challenges": [{
 		"name": "challenge",
-		"location": "location",
+		"latLngs": [
+			{ "latLng": [59.888937, -81.210938],
+				"hint": "This is the hint"
+			},
+			{ "latLng": [-10.422988, -56.865234],
+				"hint": "This is another one"
+			}
+		],
+		"mapDisplay":false,
+		"description": "This is the description of the challenge"
+	},
+	{
+		"name": "challenge 2",
+		"latLngs": [
+			{ "latLng": [54.888937, -81.210938],
+				"hint": "This is the hint"
+			},
+			{ "latLng": [-15.422988, -56.865234],
+				"hint": "This is another one"
+			}
+		],
+		"mapDisplay":false,
 		"description": "This is the description of the challenge"
 	}]
-}]
+},
+{
+	"weekNumber": 2,
+	"active": false,
+	"show":false,
+	"challenges": [{
+		"name": "challenge",
+		"latLngs": [
+			{ "latLng": [80,25],
+				"hint": "This is the hint"
+			}
+		],
+		"mapDisplay":false,
+		"description": "This is the description of the challenge"
+	}]
+},
+{
+	"weekNumber": 3,
+	"active": false,
+	"show":false,
+	"challenges": [{
+		"name": "challenge",
+		"latLngs": [
+			{ "latLng": [80,25],
+				"hint": "This is the hint"
+			},
+			{ "latLng": [45,25],
+				"hint": "This is another one"
+			}
+		],
+		"mapDisplay":false,
+		"description": "This is the description of the challenge"
+	}]
+},
+{
+	"weekNumber": 4,
+	"active": false,
+	"show":false,
+	"challenges": [{
+		"name": "challenge",
+		"latLngs": [
+			{ "latLng": [80,25],
+				"hint": "This is the hint"
+			},
+			{ "latLng": [45,25],
+				"hint": "This is another one"
+			}
+		],
+		"mapDisplay":false,
+		"description": "This is the description of the challenge"
+	}]
+},
+{
+	"weekNumber": 5,
+	"active": false,
+	"show":false,
+	"challenges": [{
+		"name": "challenge",
+		"latLngs": [
+			{ "latLng": [80,25],
+				"hint": "This is the hint"
+			},
+			{ "latLng": [45,25],
+				"hint": "This is another one"
+			}
+		],
+		"mapDisplay":false,
+		"description": "This is the description of the challenge"
+	}]
+},
+{
+	"weekNumber": 6,
+	"active": false,
+	"show":false,
+	"challenges": [{
+		"name": "challenge",
+		"latLngs": [
+			{ "latLng": [80,25],
+				"hint": "This is the hint"
+			},
+			{ "latLng": [45,25],
+				"hint": "This is another one"
+			}
+		],
+		"mapDisplay":false,
+		"description": "This is the description of the challenge"
+	}]
+},
+{
+	"weekNumber": 7,
+	"active": false,
+	"show":false,
+	"challenges": [{
+		"name": "challenge",
+		"latLngs": [
+			{ "latLng": [80,25],
+				"hint": "This is the hint"
+			},
+			{ "latLng": [45,25],
+				"hint": "This is another one"
+			}
+		],
+		"mapDisplay":false,
+		"description": "This is the description of the challenge"
+	}]
+},
+{
+	"weekNumber": 8,
+	"active": false,
+	"show":false,
+	"challenges": [{
+		"name": "challenge",
+		"latLngs": [
+			{ "latLng": [80,25],
+				"hint": "This is the hint"
+			},
+			{ "latLng": [45,25],
+				"hint": "This is another one"
+			}
+		],
+		"mapDisplay":false,
+		"description": "This is the description of the challenge"
+	}]
+},
+{
+	"weekNumber": 9,
+	"active": false,
+	"show":false,
+	"challenges": [{
+		"name": "challenge",
+		"latLngs": [
+			{ "latLng": [80,25],
+				"hint": "This is the hint"
+			},
+			{ "latLng": [45,25],
+				"hint": "This is another one"
+			}
+		],
+		"mapDisplay":false,
+		"description": "This is the description of the challenge"
+	}]
+},
+{
+	"weekNumber": 10,
+	"active": false,
+	"show":false,
+	"challenges": [{
+		"name": "challenge",
+		"latLngs": [
+			{ "latLng": [80,25],
+				"hint": "This is the hint"
+			},
+			{ "latLng": [45,25],
+				"hint": "This is another one"
+			}
+		],
+		"mapDisplay":false,
+		"description": "This is the description of the challenge"
+	}]
+}
+]

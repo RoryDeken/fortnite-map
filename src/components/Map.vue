@@ -13,7 +13,6 @@
               <p>{{challenge.description}}</p>
               <label :for="index">Show on map</label>
               <input v-on:click="setZoom(1)" type="checkbox" :id="index" v-model="challenge.mapDisplay" >
-
           </span>
         </div>
       </div>

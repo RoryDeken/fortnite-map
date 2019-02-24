@@ -11,8 +11,8 @@
           <span v-for="(challenge, index) in week.challenges" class="challenge" v-on:click.stop>
               <h4>{{challenge.name}}</h4>
               <p>{{challenge.description}}</p>
-              <label :for="index">Show on map</label>
-              <input v-on:click="setZoom(1)" type="checkbox" :id="index" v-model="challenge.mapDisplay" >
+              <label v-if="challenge.hasLocation" :for="index">Show on map</label>
+              <input v-if="challenge.hasLocation" v-on:click="setZoom(1)" type="checkbox" :id="index" v-model="challenge.mapDisplay" >
           </span>
         </div>
       </div>

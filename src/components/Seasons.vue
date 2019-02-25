@@ -7,7 +7,7 @@
     </select>
     <div  class="past-seasons-container">
       <span v-for="(season, index) in seasons" v-bind:value="index" v-bind:key="season">
-        <img v-show="selected == index" v-bind:src="seasons[index]"/>
+        <img v-show="selected == index" v-bind:src="seasons[index]" :alt="'Fortnite map  during season ' + (index + 1)"/>
         </span>
     </div>
 

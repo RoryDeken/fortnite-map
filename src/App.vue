@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+        <h1><a href="/">Fortnite Interactive Challenges Map</a></h1>
     <nav>
       <ul class="menu">
         <li class="menu-item">
@@ -13,7 +14,9 @@
         </li>
       </ul>
     </nav>
+    <span class="sr-only">Use this interactive fortnite map to find all of the weekly challenges easily and without having to search through blog posts.</span>
     <router-view></router-view>
+
   </div>
 </template>
 
@@ -29,13 +32,22 @@ html,body, #app {
   width:100vw;
   padding:0;
   margin:0;
-
+  background:#333;
 }
 #app {
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-
+background:#333;
+}
+h1 {
+font-size:2.5em;
+color:#FFF;
+text-align:center;
+}
+h1 a {
+color:#FFF;
+text-decoration:none;
 }
 nav {
 display:flex;
@@ -60,9 +72,14 @@ list-style:none;
 nav ul li a {
 color:#CCC;
 text-decoration:none;
-font-size:14px;
+font-size:1.5em;
 }
 nav ul li a:hover, nav ul li a:focus {
 color:#FFF;
 }
+.sr-only {
+position:absolute;
+left:-300%;
+}
+
 </style>

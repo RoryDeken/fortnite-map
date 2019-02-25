@@ -1,6 +1,6 @@
 <template>
   <div id="map">
-    <div class="controls-wrapper">
+<div class="controls-wrapper">
     <h2>Season {{ currentSeason }} Challenges</h2>
 
     <section class="challenges" v-for="week in weeks">
@@ -11,8 +11,8 @@
           <span v-for="(challenge, index) in week.challenges" class="challenge" v-on:click.stop>
               <h4>{{challenge.name}}</h4>
               <p>{{challenge.description}}</p>
+                <input v-if="challenge.hasLocation" v-on:click="setZoom(1)" type="checkbox" :id="index" v-model="challenge.mapDisplay" >
               <label v-if="challenge.hasLocation" :for="index">Show on map</label>
-              <input v-if="challenge.hasLocation" v-on:click="setZoom(1)" type="checkbox" :id="index" v-model="challenge.mapDisplay" >
           </span>
         </div>
       </div>
@@ -109,6 +109,7 @@ align-items:flex-start;
 align-content:flex-start;
 justify-content:center;
 flex-wrap:wrap;
+color:#FFF;
 }
 
 #map .controls-wrapper h2,  #map .controls-wrapper .challenges  {
@@ -117,12 +118,15 @@ flex-basis:100%;
 justify-content:center;
 align-items:flex-start;
 }
+#map .controls-wrapper h2 {
+    font-size: 1.9em;
+}
 #map .controls-wrapper .challenges {
 align-content:flex-start;
 }
 #map .controls-wrapper .challenges .week{
 display:flex;
-flex-basis:50%;
+flex-basis:75%;
 justify-content:center;
 align-content:space-around;
 flex-wrap:wrap;
@@ -132,6 +136,9 @@ display:flex;
 flex:1 100%;
 justify-content:center;
 flex-wrap:wrap;
+}
+#map .controls-wrapper .challenges .week h3 {
+    font-size: 1.75em;
 }
 #map .controls-wrapper .challenges .week h3, #map .controls-wrapper .challenges .week span > * {
 margin:auto;
@@ -156,9 +163,43 @@ padding-bottom:5px;
 font-size:42px;
 position:absolute;
 left:8px;
-top:0px;
+top:-8px;
 display:block;
 
+}
+#map .controls-wrapper .challenges .week span h4 {
+font-size:1.55em;
+margin-bottom:10px;
+cursor: default;
+font-weight:normal;
+}
+#map .controls-wrapper .challenges .week span p {
+font-size:1.25em;
+margin-bottom:15px;
+}
+#map .controls-wrapper .challenges .week span label {
+margin:20px auto;
+font-size:1em;
+background: #FFF;
+color:#333;
+padding:0.7em;
+cursor:pointer;
+text-transform:uppercase;
+}
+#map .controls-wrapper .challenges .week span input:checked + label:after {
+  content: ' \2796';
+  top: 2px;
+  position: relative;
+  left: 4px;
+}
+
+#map .controls-wrapper .challenges .week span label:hover,
+#map .controls-wrapper .challenges .week span label:focus {
+color:#FFF;
+background:#333;
+}
+#map .controls-wrapper .challenges .week span input {
+display:none;
 }
 .week.locked p {
 position: absolute;
@@ -174,6 +215,7 @@ content: '\203A';
 }
 .week.active.show:before {
 transform:rotate(90deg);
+top:-2px;
 }
 .challenges {
     display: flex;
@@ -182,4 +224,29 @@ transform:rotate(90deg);
 .challenge {
 margin:10px auto;
 }
+.challenge label {
+margin:15px auto;
+font-size:
+}
+
+@media(max-width:1024px){
+  #app {
+  height:auto;
+  }
+  #map {
+  flex-wrap:wrap;
+  }
+  #map .controls-wrapper {
+    height: 25vh;
+    overflow: scroll;
+    flex-basis:100%;
+    order:2;
+    }
+    #map #mapContainer {
+    flex-basis:100%;
+    order:1;
+    height:50vh;
+    }
+}
+
 </style>

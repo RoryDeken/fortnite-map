@@ -2,14 +2,18 @@
   <div id="map">
 <div class="controls-wrapper">
     <h2>Season {{ currentSeason }} Challenges</h2>
-
-    <section class="challenges" v-for="week in weeks">
+        <div v-if="weeks.length == 0" class="loading">Loading...</div>
+        <p v-if="weeks.length" class="note">&star; Battle Pass challenge</p>
+    <section class="challenges" v-for="week in sortedArray">
       <div class="week"  v-on:click="week.acf.show = !week.acf.show"  v-bind:class="{active:week.acf.active, show: week.acf.show, locked: !week.acf.active }">
       <p class="lock" v-if="!week.acf.active">&#128274;</p>
       <h3>Week {{ week.acf.week_number}} </h3>
         <div v-if="week.acf.show && week.acf.active" class="challenges">
           <span v-for="(challenge, index) in week.acf.challenges" class="challenge" v-on:click.stop>
-              <h4>{{challenge.challenge_name}}</h4>
+              <h4>
+                <span v-if="challenge.battle_pass_challenge">&star;</span>
+                {{challenge.challenge_name}}
+              </h4>
               <p>{{challenge.challenge_description}}</p>
                 <input v-if="challenge.has_location" v-on:click="setZoom(1)" type="checkbox" :id="index" v-model="challenge.map_display" >
               <label v-if="challenge.has_location" :for="index">Show on map</label>
@@ -59,6 +63,18 @@
     LTooltip,
     LPopup
   },
+  computed: {
+    sortedArray: function() {
+      function compare(a, b) {
+        if (parseInt(a.acf.week_number) < parseInt(b.acf.week_number))
+          return -1;
+        if (parseInt(a.acf.week_number) > parseInt(b.acf.week_number))
+          return 1;
+        return 0;
+      }
+      return this.weeks.sort(compare);
+    }
+  },
   methods: {
     clickHandler: function(e){
     // eslint-disable-next-line
@@ -77,7 +93,7 @@
       center: [0,0],
       mapOptions: {},
       currentSeason: 8,
-      weeks: {}
+      weeks: []
     };
   },
   mounted () {
@@ -101,6 +117,12 @@ flex-wrap:nowrap;
 #map #mapContainer {
 flex-basis:80%;
 }
+.loading {
+font-size:1.9em;
+}
+.note {
+margin-top:0;
+}
 #map .controls-wrapper {
 flex-grow:1;
 flex-basis:20%;
@@ -120,13 +142,14 @@ align-items:flex-start;
 }
 #map .controls-wrapper h2 {
     font-size: 1.9em;
+    margin-bottom:5px;
 }
 #map .controls-wrapper .challenges {
 align-content:flex-start;
 }
 #map .controls-wrapper .challenges .week{
 display:flex;
-flex-basis:75%;
+flex-basis:100%;
 justify-content:center;
 align-content:space-around;
 flex-wrap:wrap;
@@ -163,7 +186,7 @@ padding-bottom:5px;
 .week:before {
 font-size:42px;
 position:absolute;
-left:8px;
+left:35px;
 top:-8px;
 display:block;
 
@@ -175,6 +198,9 @@ cursor: default;
 font-weight:normal;
 flex-basis:100%;
 text-align:center;
+}
+#map .controls-wrapper .challenges .week span h4 span {
+display:inline;
 }
 #map .controls-wrapper .challenges .week span p {
 font-size:1.25em;
@@ -207,10 +233,10 @@ background:#333;
 display:none;
 }
 .week.locked p {
-position: absolute;
-    top: -20px;
-    left: 0;
-    font-size: 26px;
+  position: absolute;
+  top: -14px;
+  left: 35px;
+  font-size: 26px;
 }
 .week.locked:before {
 content:'';

@@ -34,6 +34,12 @@ html,body, #app {
   margin:0;
   background:#333;
 }
+h1, h1 a, h2,h3,h4,h5,h6 {
+font-family:FortniteMap,Arial,sans;
+}
+p,a,span {
+font-family:Arial,sans;
+}
 #app {
 display:flex;
 flex-wrap:wrap;

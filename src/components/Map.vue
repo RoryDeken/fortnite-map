@@ -101,7 +101,7 @@
   },
   mounted () {
       ax
-        .get('http://api.fortnite-map.net/wp-json/wp/v2/fortnite_challenges')
+        .get('https://api.fortnite-map.net/wp-json/wp/v2/fortnite_challenges')
         .then(response => (
           this.weeks = response.data
         ))

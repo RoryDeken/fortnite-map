@@ -1,0 +1,24 @@
+@font-face {
+    font-family: FortniteMap;
+    src: url(FortniteMap.eot);
+    src: url(FortniteMap.eot#iefix) format("embedded-opentype"),url(FortniteMap.woff) format("woff"),url(FortniteMap.svg) format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal
+}
+@font-face{
+    font-family:FortniteMapSmall;
+    src:url(FortniteMapSmall.eot);
+    src:url(FortniteMapSmall.eot#iefix) format("embedded-opentype"),url(FortniteMapSmall.woff) format("woff"),url(FortniteMapSmall.svg) format("svg");
+    font-weight:400;
+    font-style:normal;
+    font-stretch:normal
+}
+@font-face{
+    font-family:FortniteMapRegular;
+    src:url(FortniteMapRegular.eot);
+    src:url(FortniteMapRegular.eot#iefix) format("embedded-opentype"),url(FortniteMapRegular.woff) format("woff"),url(FortniteMapRegular.woff2) format("woff2"),url(FortniteMapRegular.svg) format("svg");
+    font-weight:400;
+    font-style:normal;
+    font-stretch:normal
+}

@@ -4,12 +4,12 @@
     <h2>Season {{ currentSeason }} Challenges</h2>
         <div v-if="weeks.length == 0" class="loading">Loading...</div>
         <p v-if="weeks.length" class="note">&star; Battle Pass challenge</p>
-    <section class="challenges" v-for="week in sortedArray">
+    <section class="challenges" v-for="week in sortedArray" v-bind:key="week.week_number">
       <div class="week"  v-on:click="week.acf.show = !week.acf.show"  v-bind:class="{active:week.acf.active, show: week.acf.show, locked: !week.acf.active }">
       <p class="lock" v-if="!week.acf.active">&#128274;</p>
       <h3>Week {{ week.acf.week_number}} </h3>
         <div v-if="week.acf.show && week.acf.active" class="challenges">
-          <span v-for="(challenge, index) in week.acf.challenges" class="challenge" v-on:click.stop>
+          <span v-for="(challenge, index) in week.acf.challenges" class="challenge" v-on:click.stop v-bind:key="challenge.challenge_name">
               <h4>
                 <span v-if="challenge.battle_pass_challenge">&star;</span>
                 {{challenge.challenge_name}}
@@ -17,6 +17,7 @@
               <p>{{challenge.challenge_description}}</p>
                 <input v-if="challenge.has_location" v-on:click="setZoom(1)" type="checkbox" :id="index" v-model="challenge.map_display" >
               <label v-if="challenge.has_location" :for="index">Show on map</label>
+              <a v-if="challenge.screenshot" v-bind:href="challenge.screenshot" target="_blank" class="screenshot">View screenshot</a>
           </span>
         </div>
       </div>
@@ -32,12 +33,14 @@
        ref="map"
      >
      <l-tile-layer :url="url" :options="{noWrap: true}" />
-     <div v-for="week in weeks">
-         <span v-for="challenge in week.acf.challenges">
-           <span v-if="challenge.map_display" v-for="location in challenge.lat_lngs">
+     <div v-for="week in weeks" v-bind:key="week.week_number">
+         <span v-for="challenge in week.acf.challenges" v-bind:key="challenge.challenge_name">
+         <span v-if="challenge.map_display">
+           <span  v-for="location in challenge.lat_lngs" v-bind:key="location.hint">
             <l-marker :lat-lng="location.lat_lng"  >
             <l-tooltip :content="location.hint"/>
             </l-marker>
+           </span>
            </span>
          </span>
       </div>
@@ -46,7 +49,7 @@
 </template>
 
 <script>
-  import {L, LMap, LTileLayer, LMarker, LTooltip, LPopup } from 'vue2-leaflet'
+  import {L, LMap, LTileLayer, LMarker, LTooltip/*, LPopup */ } from 'vue2-leaflet'
   import ax from 'axios'
   import 'leaflet/dist/leaflet.css'
   delete L.Icon.Default.prototype._getIconUrl;
@@ -60,8 +63,8 @@
     LMap,
     LTileLayer,
     LMarker,
-    LTooltip,
-    LPopup
+    LTooltip/*,
+    LPopup*/
   },
   computed: {
     sortedArray: function() {
@@ -72,7 +75,7 @@
           return 1;
         return 0;
       }
-      return this.weeks.sort(compare);
+      return this.weeks.slice().sort(compare);
     }
   },
   methods: {
@@ -203,12 +206,12 @@ text-align:center;
 display:inline;
 }
 #map .controls-wrapper .challenges .week span p {
-font-size:1.25em;
+font-size:1.1em;
 margin-bottom:15px;
 flex-basis:100%;
 text-align:left;
 }
-#map .controls-wrapper .challenges .week span label {
+#map .controls-wrapper .challenges .week span label,  #map .controls-wrapper .challenges .week span .screenshot {
 margin:20px auto;
 font-size:1em;
 background: #FFF;
@@ -216,6 +219,7 @@ color:#333;
 padding:0.7em;
 cursor:pointer;
 text-transform:uppercase;
+text-decoration:none;
 }
 #map .controls-wrapper .challenges .week span input:checked + label:after {
   content: ' \2796';

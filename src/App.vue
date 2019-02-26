@@ -34,11 +34,14 @@ html,body, #app {
   margin:0;
   background:#333;
 }
-h1, h1 a, h2,h3,h4,h5,h6 {
+h1, h1 a {
 font-family:FortniteMap,Arial,sans;
 }
-p,a,span {
-font-family:Arial,sans;
+h2,h3 {
+font-family:FortniteMapRegular,Arial,sans;
+}
+h4,h5,h6,p,a,span {
+font-family:FortniteMapSmall,Arial,sans;
 }
 #app {
 display:flex;
@@ -47,7 +50,7 @@ justify-content:center;
 background:#333;
 }
 h1 {
-font-size:2.5em;
+font-size:3.5em;
 color:#FFF;
 text-align:center;
 }

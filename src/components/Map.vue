@@ -4,15 +4,15 @@
     <h2>Season {{ currentSeason }} Challenges</h2>
 
     <section class="challenges" v-for="week in weeks">
-      <div class="week"  v-on:click="week.show = !week.show"  v-bind:class="{active:week.active, show: week.show, locked: !week.active }">
-      <p class="lock" v-if="!week.active">&#128274;</p>
-      <h3>Week {{ week.weekNumber}} </h3>
-        <div v-if="week.show && week.active" class="challenges">
-          <span v-for="(challenge, index) in week.challenges" class="challenge" v-on:click.stop>
-              <h4>{{challenge.name}}</h4>
-              <p>{{challenge.description}}</p>
-                <input v-if="challenge.hasLocation" v-on:click="setZoom(1)" type="checkbox" :id="index" v-model="challenge.mapDisplay" >
-              <label v-if="challenge.hasLocation" :for="index">Show on map</label>
+      <div class="week"  v-on:click="week.acf.show = !week.acf.show"  v-bind:class="{active:week.acf.active, show: week.acf.show, locked: !week.acf.active }">
+      <p class="lock" v-if="!week.acf.active">&#128274;</p>
+      <h3>Week {{ week.acf.week_number}} </h3>
+        <div v-if="week.acf.show && week.acf.active" class="challenges">
+          <span v-for="(challenge, index) in week.acf.challenges" class="challenge" v-on:click.stop>
+              <h4>{{challenge.challenge_name}}</h4>
+              <p>{{challenge.challenge_description}}</p>
+                <input v-if="challenge.has_location" v-on:click="setZoom(1)" type="checkbox" :id="index" v-model="challenge.map_display" >
+              <label v-if="challenge.has_location" :for="index">Show on map</label>
           </span>
         </div>
       </div>
@@ -29,9 +29,9 @@
      >
      <l-tile-layer :url="url" :options="{noWrap: true}" />
      <div v-for="week in weeks">
-         <span v-for="challenge in week.challenges">
-           <span v-if="challenge.mapDisplay" v-for="location in challenge.latLngs">
-            <l-marker :lat-lng="location.latLng"  >
+         <span v-for="challenge in week.acf.challenges">
+           <span v-if="challenge.map_display" v-for="location in challenge.lat_lngs">
+            <l-marker :lat-lng="location.lat_lng"  >
             <l-tooltip :content="location.hint"/>
             </l-marker>
            </span>
@@ -76,13 +76,13 @@
       maxZoom:6,
       center: [0,0],
       mapOptions: {},
-      currentSeason: 7,
+      currentSeason: 8,
       weeks: {}
     };
   },
   mounted () {
       ax
-        .get('map/weeks.json')
+        .get('http://api.fortnite-map.net/wp-json/wp/v2/fortnite_challenges')
         .then(response => (
           this.weeks = response.data
         ))
@@ -141,7 +141,8 @@ flex-wrap:wrap;
     font-size: 1.75em;
 }
 #map .controls-wrapper .challenges .week h3, #map .controls-wrapper .challenges .week span > * {
-margin:auto;
+margin-top:auto;
+margin-bottom:0;
 }
 #map .controls {
 flex: 1 100%;
@@ -172,10 +173,14 @@ font-size:1.55em;
 margin-bottom:10px;
 cursor: default;
 font-weight:normal;
+flex-basis:100%;
+text-align:center;
 }
 #map .controls-wrapper .challenges .week span p {
 font-size:1.25em;
 margin-bottom:15px;
+flex-basis:100%;
+text-align:left;
 }
 #map .controls-wrapper .challenges .week span label {
 margin:20px auto;
@@ -221,8 +226,11 @@ top:-2px;
     display: flex;
     flex-wrap: wrap;
 }
-.challenge {
-margin:10px auto;
+
+span.challenge {
+    border-bottom: 2px solid white;
+    margin: 15px auto;
+    padding: 0px 15px;
 }
 .challenge label {
 margin:15px auto;

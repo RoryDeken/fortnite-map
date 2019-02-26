@@ -1,3 +1,15 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP_HOST} ^fortnite-map\.net$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.fortnite-map\.net$
+RewriteRule .* https://fortnite-map.net%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{HTTPS} =on
+RewriteCond %{HTTP_HOST} ^www\.fortnite-map\.net$
+RewriteRule .* https://fortnite-map.net%{REQUEST_URI} [R=301,L]
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /

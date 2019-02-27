@@ -50,11 +50,30 @@ html,body, #app {
   margin:0;
   background:#333;
 }
+#app {
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+background:#333;
+}
 header {
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
 align-items:center;
+}
+.social {
+padding-left:0;
+display:flex;
+flex-basis:100%;
+justify-content:center;
+}
+.social li:last-child {
+margin-left:15px;
+}
+.social li a .fade-text {
+position:absolute;
+left:-300%;
 }
 h1, h1 a {
 font-family:FortniteMap,Arial,sans;
@@ -65,16 +84,12 @@ font-family:FortniteMapRegular,Arial,sans;
 h4,h5,h6,p,a,span {
 font-family:FortniteMapSmall,Arial,sans;
 }
-#app {
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-background:#333;
-}
+
 h1 {
 font-size:3.5em;
 color:#FFF;
 text-align:center;
+margin-bottom:0;
 }
 h1 a {
 color:#FFF;
@@ -86,6 +101,18 @@ list-style:none;
 .social li a {
 text-decoration:none;
 }
+.social li a .fade-text {
+color:white;
+display:inline;
+opacity:0;
+}
+.social li:hover .fade-text, .social li:focus .fade-text {
+position:relative;
+left:10px;
+top:-10px;
+opacity:100;
+}
+
 nav {
 display:flex;
 justify-content:center;
@@ -111,6 +138,7 @@ color:#CCC;
 text-decoration:none;
 font-size:1.5em;
 }
+
 nav ul li a:hover, nav ul li a:focus {
 color:#FFF;
 }

@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import {L, LMap, LTileLayer, LMarker, LTooltip, LPopup } from 'vue2-leaflet'
+  import {L, LMap, LTileLayer } from 'vue2-leaflet'
   import 'leaflet/dist/leaflet.css'
   delete L.Icon.Default.prototype._getIconUrl;
   L.Icon.Default.mergeOptions({
@@ -26,9 +26,6 @@
   components: {
     LMap,
     LTileLayer,
-    LMarker,
-    LTooltip,
-    LPopup
   },
   methods: {
     clickHandler: function(e){

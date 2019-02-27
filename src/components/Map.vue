@@ -146,6 +146,7 @@ align-items:flex-start;
 #map .controls-wrapper h2 {
     font-size: 1.9em;
     margin-bottom:5px;
+    text-align:center;
 }
 #map .controls-wrapper .challenges {
 align-content:flex-start;

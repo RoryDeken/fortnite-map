@@ -8,7 +8,7 @@
        @click="clickHandler($event)"
        :options="mapOptions"
      >
-     <l-tile-layer :url="url" :options="{noWrap: true}" />
+     <l-tile-layer :url="url" :options="{noWrap: true}"  />
    </l-map>
  </div>
 </template>
@@ -40,7 +40,6 @@
       maxZoom:6,
       center: [0,0],
       mapOptions: {},
-      markers: [],
       currentSeason: 7,
       weeks: {}
     };

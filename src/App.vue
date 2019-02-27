@@ -32,7 +32,6 @@
     </header>
     <span class="sr-only">Use this interactive fortnite map to find all of the weekly challenges easily and without having to search through blog posts.</span>
     <router-view></router-view>
-
   </div>
 </template>
 

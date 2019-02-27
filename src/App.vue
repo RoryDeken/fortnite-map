@@ -1,6 +1,21 @@
 <template>
   <div id="app">
+  <header>
         <h1><a href="/">Fortnite Interactive Challenges Map</a></h1>
+        <ul class="social">
+            <li>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//fortnite-map.net/" target="_blank">
+                <img src="/assets/icons/facebook.png" style="width:32px;height:auto;max-width:100%;"/>
+                <span class="fade-text">Share on Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/home?status=Check%20out%20this%20interactive%20map%20of%20the%20weekly%20challenges%20on%20%40FortniteGame.%20%23fortnitemap%20%23fortnite%20%23season8%20https%3A//fortnite-map.net/" target="_blank">
+                <img src="/assets/icons/twitter.png" style="width:32px;height:auto;max-width:100%;"/>
+                <span class="fade-text">Share on Twitter</span>
+              </a>
+            </li>
+        </ul>
     <nav>
       <ul class="menu">
         <li class="menu-item">
@@ -14,6 +29,7 @@
         </li>
       </ul>
     </nav>
+    </header>
     <span class="sr-only">Use this interactive fortnite map to find all of the weekly challenges easily and without having to search through blog posts.</span>
     <router-view></router-view>
 
@@ -33,6 +49,12 @@ html,body, #app {
   padding:0;
   margin:0;
   background:#333;
+}
+header {
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+align-items:center;
 }
 h1, h1 a {
 font-family:FortniteMap,Arial,sans;
@@ -58,13 +80,19 @@ h1 a {
 color:#FFF;
 text-decoration:none;
 }
+.social li {
+list-style:none;
+}
+.social li a {
+text-decoration:none;
+}
 nav {
 display:flex;
 justify-content:center;
 flex-basis:100%;
 min-height:50px;
 align-items:center;
-background:#2A2A2A;
+background:#333;
 
 }
 nav ul {
@@ -90,5 +118,10 @@ color:#FFF;
 position:absolute;
 left:-300%;
 }
-
+@media(max-width:1024px){
+h1 {
+font-size: 2.5em;
+margin: 0.2em auto;
+}
+}
 </style>

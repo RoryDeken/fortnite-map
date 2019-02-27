@@ -4,13 +4,13 @@
         <h1><a href="/">Fortnite Interactive Challenges Map</a></h1>
         <ul class="social">
             <li>
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//fortnite-map.net/" target="_blank">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//fortnite-map.net/" target="_blank" title="Share on Facebook">
                 <img src="/assets/icons/facebook.png" style="width:32px;height:auto;max-width:100%;"/>
                 <span class="fade-text">Share on Facebook</span>
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/home?status=Check%20out%20this%20interactive%20map%20of%20the%20weekly%20challenges%20on%20%40FortniteGame.%20%23fortnitemap%20%23fortnite%20%23season8%20https%3A//fortnite-map.net/" target="_blank">
+              <a href="https://twitter.com/home?status=Check%20out%20this%20interactive%20map%20of%20the%20weekly%20challenges%20on%20%40FortniteGame.%20%23fortnitemap%20%23fortnite%20%23season8%20https%3A//fortnite-map.net/" target="_blank" title="Share on Twitter">
                 <img src="/assets/icons/twitter.png" style="width:32px;height:auto;max-width:100%;"/>
                 <span class="fade-text">Share on Twitter</span>
               </a>
@@ -106,12 +106,7 @@ color:white;
 display:inline;
 opacity:0;
 }
-.social li:hover .fade-text, .social li:focus .fade-text {
-position:relative;
-left:10px;
-top:-10px;
-opacity:100;
-}
+
 
 nav {
 display:flex;
@@ -139,7 +134,7 @@ text-decoration:none;
 font-size:1.5em;
 }
 
-nav ul li a:hover, nav ul li a:focus {
+nav ul li a:hover, nav ul li a:focus, nav ul li a.router-link-active {
 color:#FFF;
 }
 .sr-only {

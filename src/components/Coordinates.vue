@@ -35,7 +35,7 @@
   },
   data () {
     return {
-      url: '/map/mapTiles/{z}/{x}{y}.jpg',
+      url: '/assets/map/mapTiles/{z}/{x}{y}.jpg',
       zoom: 3,
       maxZoom:6,
       center: [0,0],

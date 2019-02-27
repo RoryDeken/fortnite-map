@@ -28,11 +28,11 @@
        :zoom="zoom"
        :center="center"
        :maxZoom="maxZoom"
-       @click="clickHandler($event)"
+       :bounds="bounds"
        :options="mapOptions"
        ref="map"
      >
-     <l-tile-layer :url="url" :options="{noWrap: true}" />
+     <l-tile-layer :url="url" :options="{noWrap: true}"  />
      <div v-for="week in weeks" v-bind:key="week.week_number">
          <span v-for="challenge in week.acf.challenges" v-bind:key="challenge.challenge_name">
          <span v-if="challenge.map_display">
@@ -66,6 +66,11 @@
     LTooltip/*,
     LPopup*/
   },
+  created: function(){
+    if(window && window.innerWidth <= 1024){
+      this.zoom = 1;
+    }
+  },
   computed: {
     sortedArray: function() {
       function compare(a, b) {
@@ -79,10 +84,6 @@
     }
   },
   methods: {
-    clickHandler: function(e){
-    // eslint-disable-next-line
-      console.log(e.latlng)
-    },
     addMarker: function(){},
     setZoom: function(num){
     this.$refs.map.mapObject.setZoom(num);
@@ -90,10 +91,11 @@
   },
   data () {
     return {
-      url: '/map/mapTiles/{z}/{x}{y}.jpg',
+      url: '/assets/map/mapTiles/{z}/{x}{y}.jpg',
       zoom: 3,
       maxZoom:6,
       center: [0,0],
+      bounds: [[85,-180],[-85,180]],
       mapOptions: {},
       currentSeason: 8,
       weeks: []

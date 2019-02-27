@@ -19,13 +19,13 @@
     data() {
       return {
         seasons: [
-          '/map/seasons/small/szn1.jpg',
-          '/map/seasons/small/szn2.jpg',
-          '/map/seasons/small/szn3.jpg',
-          '/map/seasons/small/szn4.jpg',
-          '/map/seasons/small/szn5.jpg',
-          '/map/seasons/small/szn6.jpg',
-          '/map/seasons/small/szn7.jpg',
+          '/assets/map/seasons/small/szn1.jpg',
+          '/assets/map/seasons/small/szn2.jpg',
+          '/assets/map/seasons/small/szn3.jpg',
+          '/assets/map/seasons/small/szn4.jpg',
+          '/assets/map/seasons/small/szn5.jpg',
+          '/assets/map/seasons/small/szn6.jpg',
+          '/assets/map/seasons/small/szn7.jpg',
         ],
         selected: 6
         }
@@ -39,6 +39,7 @@ align-items:flex-start;
 align-content:flex-start;
 flex-wrap:wrap;
 justify-content:center;
+border-top:4px solid #CCC;
 }
 #map select {
 margin:50px auto;
@@ -55,6 +56,7 @@ justify-content:center;
 align-items:flex-start;
 align-content:space-around;
 }
+
 
 
 </style>

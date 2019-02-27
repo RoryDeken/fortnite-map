@@ -12,6 +12,7 @@ const routes = [
   { path: '/map', component: Map },
   { path: '/seasons', component: Seasons },
   { path: '/coordinates', component: Coordinates },
+  { path: '/assets', },
   { path: '*', redirect: '/' }
 ]
 
@@ -24,5 +25,6 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  mounted: () => document.dispatchEvent(new Event('x-app-rendered')),
   render: h => h(App)
 }).$mount('#app')

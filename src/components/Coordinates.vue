@@ -35,7 +35,7 @@
   },
   data () {
     return {
-      url: '/assets/map/mapTiles/{z}/{x}{y}.jpg',
+      url: '/assets/map/mapTiles/season8/{z}/{x}_{y}.jpg',
       zoom: 3,
       maxZoom:6,
       center: [0,0],
@@ -46,17 +46,34 @@
   }
 }
 </script>
-<style scoped>
+<style>
 #map {
 height:100%;
 width:100%;
 display:flex;
 justify-content:center;
 flex-wrap:nowrap;
-
 }
 #map #mapContainer {
-flex-basis:100%;
-cursor:crosshair;
+flex-basis:80%;
 }
+
+.note {
+margin-top:0;
+}
+
+@media(max-width:1024px){
+  #app {
+  height:auto;
+  }
+  #map {
+  flex-wrap:wrap;
+  }
+    #map #mapContainer {
+    flex-basis:100%;
+    order:1;
+    height:75vh;
+    }
+}
+
 </style>

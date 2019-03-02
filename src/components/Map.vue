@@ -91,7 +91,7 @@
   },
   data () {
     return {
-      url: '/assets/map/mapTiles/{z}/{x}{y}.jpg',
+      url: '/assets/map/mapTiles/season8/{z}/{x}_{y}.jpg',
       zoom: 3,
       maxZoom:6,
       center: [0,0],
@@ -120,7 +120,7 @@ justify-content:center;
 flex-wrap:nowrap;
 }
 #map #mapContainer {
-flex-basis:80%;
+flex-basis:70%;
 }
 .loading {
 font-size:1.9em;
@@ -130,13 +130,14 @@ margin-top:0;
 }
 #map .controls-wrapper {
 flex-grow:1;
-flex-basis:20%;
+flex-basis:30%;
 display:flex;
 align-items:flex-start;
 align-content:flex-start;
 justify-content:center;
 flex-wrap:wrap;
 color:#FFF;
+overflow-y:scroll;
 }
 
 #map .controls-wrapper h2,  #map .controls-wrapper .challenges  {

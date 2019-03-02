@@ -26,8 +26,9 @@
           '/assets/map/seasons/small/szn5.jpg',
           '/assets/map/seasons/small/szn6.jpg',
           '/assets/map/seasons/small/szn7.jpg',
+          '/assets/map/seasons/small/szn8.jpg',
         ],
-        selected: 6
+        selected: 7
         }
     }
   }

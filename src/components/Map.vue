@@ -272,6 +272,9 @@ font-size:
 }
 
 @media(max-width:1024px){
+html {
+font-size:12px;
+}
   #app {
   height:auto;
   }
@@ -279,7 +282,7 @@ font-size:
   flex-wrap:wrap;
   }
   #map .controls-wrapper {
-    height: 25vh;
+    height: 50vh;
     overflow: scroll;
     flex-basis:100%;
     order:2;
@@ -288,7 +291,8 @@ font-size:
     flex-basis:100%;
     order:1;
     height:50vh;
-    }
+
+}
 }
 
 </style>

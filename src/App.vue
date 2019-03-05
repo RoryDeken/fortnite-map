@@ -5,13 +5,13 @@
         <ul class="social">
             <li>
               <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//fortnite-map.net/" target="_blank" title="Share on Facebook">
-                <img src="/assets/icons/facebook.png" style="width:32px;height:auto;max-width:100%;"/>
+                <img src="/assets/icons/facebook.png" class="icon"/>
                 <span class="fade-text">Share on Facebook</span>
               </a>
             </li>
             <li>
               <a href="https://twitter.com/home?status=Check%20out%20this%20interactive%20map%20of%20the%20weekly%20challenges%20on%20%40FortniteGame.%20%23fortnitemap%20%23fortnite%20%23season8%20https%3A//fortnite-map.net/" target="_blank" title="Share on Twitter">
-                <img src="/assets/icons/twitter.png" style="width:32px;height:auto;max-width:100%;"/>
+                <img src="/assets/icons/twitter.png" class="icon" />
                 <span class="fade-text">Share on Twitter</span>
               </a>
             </li>
@@ -73,6 +73,9 @@ margin-left:15px;
 .social li a .fade-text {
 position:absolute;
 left:-300%;
+}
+.social li img.icon {
+.width:32px;height:auto;max-width:100%;
 }
 h1, h1 a {
 font-family:FortniteMap,Arial,sans;
@@ -142,8 +145,30 @@ left:-300%;
 }
 @media(max-width:1024px){
 h1 {
-font-size: 2.5em;
+font-size: 2em;
 margin: 0.2em auto;
+}
+nav {
+min-height:25px;
+}
+
+nav ul li {
+font-size:0.5em;
+}
+.social li img.icon {
+ width:auto;
+ height:1.5em;
+}
+}
+@media(max-width:768px){
+.social {
+position: fixed;
+    left: 25px;
+    top: 0;
+    display:block;
+}
+.social li:last-child {
+    margin-left: 0;
 }
 }
 </style>

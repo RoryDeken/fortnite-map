@@ -25,7 +25,7 @@
           <router-link to="/seasons" class="menu-item-link">Past Seasons</router-link>
         </li>
         <li class="menu-item">
-          <a class="donate" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=52U22VZKEQGCN&currency_code=USD&source=url" target="_blank">Donate</a>
+          <a class="donate" href="https://twitter.com/thesquatingdog" target="_blank">Challenge locations by @thesquatingdog</a>
         </li>
       </ul>
     </nav>
@@ -128,7 +128,10 @@ justify-content:space-evenly;
 flex:1;
 }
 nav ul li {
-list-style:none;
+    list-style: none;
+    flex-basis: 33%;
+    justify-content: center;
+    display: flex;
 }
 nav ul li a {
 color:#CCC;

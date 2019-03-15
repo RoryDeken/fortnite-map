@@ -31,6 +31,7 @@
        :bounds="bounds"
        :options="mapOptions"
        ref="map"
+       @click="clickHandler($event)"
      >
      <l-tile-layer :url="url" :options="{noWrap: true}"  />
      <div v-for="week in weeks" v-bind:key="week.week_number">
@@ -87,7 +88,13 @@
     addMarker: function(){},
     setZoom: function(num){
     this.$refs.map.mapObject.setZoom(num);
-    }
+    },
+    clickHandler: function(e){
+      if(window && window.location.href.indexOf('coordinates') > -1){
+            alert(e.latlng);
+      }
+    },
+
   },
   data () {
     return {
@@ -290,7 +297,7 @@ font-size:12px;
     #map #mapContainer {
     flex-basis:100%;
     order:1;
-    height:50vh;
+    height:33vh;
 
 }
 }

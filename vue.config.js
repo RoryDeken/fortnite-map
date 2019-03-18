@@ -1,5 +1,6 @@
 const path = require('path')
 const PrerenderSPAPlugin = require('prerender-spa-plugin')
+const SWPrecache = require('sw-precache-webpack-plugin')
 
 module.exports = {
   pluginOptions: {
@@ -16,6 +17,14 @@ module.exports = {
           .replace('id="app"', 'id="app" data-server-rendered="true"');
         return route;
       }
-    }
+    },
+    SWPrecache: {
+          cacheId: 'fortnite-map',
+          filename: 'service-worker.js',
+          staticFileGlobs: ['dist/**/*.{js,css}', '/'],
+          minify: true,
+          stripPrefix: 'dist/',
+          dontCacheBustUrlsMatching: /\.\w{6}\./
+    },
   }
 }

@@ -109,12 +109,20 @@
     };
   },
   mounted () {
+    if (localStorage.weeks) {
+      this.weeks = JSON.parse(localStorage.weeks);
+    }else{
       ax
-        .get('https://api.fortnite-map.net/wp-json/wp/v2/fortnite_challenges')
-        .then(response => (
-          this.weeks = response.data
-        ))
-
+      .get('https://api.fortnite-map.net/wp-json/wp/v2/fortnite_challenges')
+      .then(response => (
+        this.weeks = response.data
+      ))
+    }
+  },
+  watch: {
+    weeks(newWeeks) {
+      localStorage.weeks = JSON.stringify(newWeeks);
+    }
   }
 }
 </script>

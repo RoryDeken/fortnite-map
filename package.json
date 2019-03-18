@@ -2,7 +2,6 @@
   "name": "fortnite-map",
   "version": "0.1.0",
   "private": true,
-  "entry": "main.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -11,6 +10,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap-vue": "^2.0.0-rc.11",
+    "register-service-worker": "^1.6.2",
     "vue": "^2.5.17",
     "vue-router": "^3.0.2",
     "vue2-leaflet": "^1.2.3"
@@ -18,10 +18,12 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.2.0",
     "@vue/cli-plugin-eslint": "^3.2.0",
+    "@vue/cli-plugin-pwa": "^3.5.1",
     "@vue/cli-service": "^3.2.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
+    "sw-precache-webpack-plugin": "^0.11.5",
     "vue-adsense": "^1.0.1",
     "vue-cli-plugin-prerender-spa": "^1.1.4",
     "vue-template-compiler": "^2.5.17"
@@ -49,5 +51,6 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "entry": "main.js"
 }

@@ -1,6 +1,10 @@
 <template>
   <div id="map">
-<div class="controls-wrapper">
+    <div id="lastPoint" v-if="lastPoint">
+      <span>{{lastPoint.lat}}</span>
+      <span>{{lastPoint.lng}}</span>
+    </div>
+    <div class="controls-wrapper">
     <h2>Season {{ currentSeason }} Challenges</h2>
         <div v-if="weeks.length == 0" class="loading">Loading...</div>
         <p v-if="weeks.length" class="note">&star; Battle Pass challenge</p>
@@ -91,7 +95,7 @@
     },
     clickHandler: function(e){
       if(window && window.location.href.indexOf('coordinates') > -1){
-            alert(e.latlng);
+            this.lastPoint = e.latlng;
       }
     },
 
@@ -105,7 +109,8 @@
       bounds: [[85,-180],[-85,180]],
       mapOptions: {},
       currentSeason: 8,
-      weeks: []
+      weeks: [],
+      lastPoint:false,
     };
   },
   mounted () {
@@ -128,6 +133,20 @@ flex-wrap:nowrap;
 }
 #map #mapContainer {
 flex-basis:70%;
+}
+#lastPoint {
+    position: fixed;
+    top: 0;
+    height: 60px;
+    left: 0;
+    background: white;
+    width: 300px;
+    text-align: center;
+    padding: 5px;
+}
+#lastPoint span{
+display:block;
+margin-top:10px;
 }
 .loading {
 font-size:1.9em;

@@ -150,6 +150,7 @@ left:-300%;
 h1 {
 font-size: 2em;
 margin: 0.2em auto;
+padding: 0.5em 5em;
 }
 nav {
 min-height:25px;
@@ -166,8 +167,8 @@ font-size:0.5em;
 @media(max-width:768px){
 .social {
 position: fixed;
-    left: 25px;
-    top: 0;
+    right: 25px;
+    top: 0.5em;
     display:block;
 }
 .social li:last-child {

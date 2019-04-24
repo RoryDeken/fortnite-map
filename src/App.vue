@@ -146,11 +146,12 @@ color:#FFF;
 position:absolute;
 left:-300%;
 }
+
 @media(max-width:1024px){
 h1 {
 font-size: 2em;
 margin: 0.2em auto;
-padding: 0.5em 5em;
+padding: 0.5em 1.5em;
 }
 nav {
 min-height:25px;
@@ -163,6 +164,7 @@ font-size:0.5em;
  width:auto;
  height:1.5em;
 }
+
 }
 @media(max-width:768px){
 .social {

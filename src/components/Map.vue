@@ -1,10 +1,58 @@
 <template>
   <div id="map">
+  <a href="#" class="toggle" @click="toggleControls">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 24 24">
+    <g>
+      <path d="M24,3c0-0.6-0.4-1-1-1H1C0.4,2,0,2.4,0,3v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V3z"/>
+      <path d="M24,11c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V11z"/>
+      <path d="M24,19c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V19z"/>
+    </g>
+  </svg></a>
     <div id="lastPoint" v-if="lastPoint">
       <span>{{lastPoint.lat}}</span>
       <span>{{lastPoint.lng}}</span>
     </div>
-    <div class="controls-wrapper">
+    <div v-if="controlsVisible" class="controls-wrapper">
+    <a href="#" class="toggle close" @click="toggleControls">
+    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    	 width="357px" height="357px" viewBox="0 0 357 357" style="enable-background:new 0 0 357 357;" xml:space="preserve">
+    <g>
+    	<g id="close">
+    		<polygon points="357,35.7 321.3,0 178.5,142.8 35.7,0 0,35.7 142.8,178.5 0,321.3 35.7,357 178.5,214.2 321.3,357 357,321.3
+    			214.2,178.5 		"/>
+    	</g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    <g>
+    </g>
+    </svg></a>
     <h2>Season {{ currentSeason }} Challenges</h2>
         <div v-if="weeks.length == 0" class="loading">Loading...</div>
         <p v-if="weeks.length" class="note">&star; Battle Pass challenge</p>
@@ -35,7 +83,7 @@
        :bounds="bounds"
        :options="mapOptions"
        ref="map"
-       @click="clickHandler($event)"
+       @click="getCoords($event)"
      >
      <l-tile-layer :url="url" :options="{noWrap: true}"  />
      <div v-for="week in weeks" v-bind:key="week.week_number">
@@ -89,16 +137,21 @@
     }
   },
   methods: {
-    addMarker: function(){},
     setZoom: function(num){
     this.$refs.map.mapObject.setZoom(num);
     },
-    clickHandler: function(e){
+    getCoords: function(e){
       if(window && window.location.href.indexOf('coordinates') > -1){
             this.lastPoint = e.latlng;
       }
     },
-
+    toggleControls: function(e){
+      if(this.controlsVisible){
+        this.controlsVisible = false;
+      }else{
+        this.controlsVisible = true;
+        }
+    },
   },
   data () {
     return {
@@ -111,6 +164,7 @@
       currentSeason: 8,
       weeks: [],
       lastPoint:false,
+      controlsVisible: false,
     };
   },
   mounted () {
@@ -119,8 +173,14 @@
         .then(response => (
           this.weeks = response.data
         ))
+      if(window && window.innerWidth > 1024){
+      this.controlsVisible = true;
+      }else {
+      this.controlsVisible = false;
+      }
 
-  }
+  },
+
 }
 </script>
 <style>
@@ -296,6 +356,9 @@ span.challenge {
 margin:15px auto;
 font-size:
 }
+.toggle {
+display:none;
+}
 
 @media(max-width:1024px){
 html {
@@ -307,6 +370,7 @@ font-size:12px;
   #map {
   flex-wrap:wrap;
   }
+
   #map .controls-wrapper {
     height: 50vh;
     overflow: scroll;
@@ -316,9 +380,37 @@ font-size:12px;
     #map #mapContainer {
     flex-basis:100%;
     order:1;
-    height:33vh;
+    height:75vh;
 
 }
+#map .controls-wrapper {
+position:fixed;
+top:0;
+z-index:3;
+background:#333;
+height:100vh;
+width:90vw;
+left:0;
+}
+#map #mapContainer {
+z-index:1;
+}
+.toggle {
+display:block;
+position:fixed;
+left:10px;
+top:10px;
+}
+.toggle.close {
+z-index:4;
+}
+.toggle svg
+{
+fill: #FFF;
+height: 25px;
+width: auto;
+}
+
 }
 
 </style>

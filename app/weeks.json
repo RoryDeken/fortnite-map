@@ -1,5 +1,5 @@
 [{
-	"weekNumber": 1,
+	"week_number": 1,
 	"active": true,
 	"show":false,
 	"challenges": [{
@@ -30,7 +30,7 @@
 	}]
 },
 {
-	"weekNumber": 2,
+	"week_number": 2,
 	"active": false,
 	"show":false,
 	"challenges": [{
@@ -45,25 +45,7 @@
 	}]
 },
 {
-	"weekNumber": 3,
-	"active": false,
-	"show":false,
-	"challenges": [{
-		"name": "challenge",
-		"hasLocation":true, "latLngs": [
-			{ "latLng": [80,25],
-				"hint": "This is the hint"
-			},
-			{ "latLng": [45,25],
-				"hint": "This is another one"
-			}
-		],
-		"mapDisplay":false,
-		"description": "This is the description of the challenge"
-	}]
-},
-{
-	"weekNumber": 4,
+	"week_number": 3,
 	"active": false,
 	"show":false,
 	"challenges": [{
@@ -81,7 +63,7 @@
 	}]
 },
 {
-	"weekNumber": 5,
+	"week_number": 4,
 	"active": false,
 	"show":false,
 	"challenges": [{
@@ -99,7 +81,7 @@
 	}]
 },
 {
-	"weekNumber": 6,
+	"week_number": 5,
 	"active": false,
 	"show":false,
 	"challenges": [{
@@ -117,7 +99,7 @@
 	}]
 },
 {
-	"weekNumber": 7,
+	"week_number": 6,
 	"active": false,
 	"show":false,
 	"challenges": [{
@@ -135,7 +117,7 @@
 	}]
 },
 {
-	"weekNumber": 8,
+	"week_number": 7,
 	"active": false,
 	"show":false,
 	"challenges": [{
@@ -153,7 +135,7 @@
 	}]
 },
 {
-	"weekNumber": 9,
+	"week_number": 8,
 	"active": false,
 	"show":false,
 	"challenges": [{
@@ -171,7 +153,25 @@
 	}]
 },
 {
-	"weekNumber": 10,
+	"week_number": 9,
+	"active": false,
+	"show":false,
+	"challenges": [{
+		"name": "challenge",
+		"hasLocation":true, "latLngs": [
+			{ "latLng": [80,25],
+				"hint": "This is the hint"
+			},
+			{ "latLng": [45,25],
+				"hint": "This is another one"
+			}
+		],
+		"mapDisplay":false,
+		"description": "This is the description of the challenge"
+	}]
+},
+{
+	"week_number": 10,
 	"active": false,
 	"show":false,
 	"challenges": [{

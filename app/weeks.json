@@ -4,28 +4,28 @@
 	"show":false,
 	"challenges": [{
 		"name": "challenge",
-		"hasLocation":true, "latLngs": [
-			{ "latLng": [59.888937, -81.210938],
+		"has_location":true, "lat_lngs": [
+			{ "lat_lng": [59.888937, -81.210938],
 				"hint": "This is the hint"
 			},
-			{ "latLng": [-10.422988, -56.865234],
+			{ "lat_lng": [-10.422988, -56.865234],
 				"hint": "This is another one"
 			}
 		],
-		"mapDisplay":false,
+		"map_display":false,
 		"description": "This is the description of the challenge"
 	},
 	{
 		"name": "challenge 2",
-		"hasLocation":false, "latLngs": [
-			{ "latLng": [54.888937, -81.210938],
+		"has_location":false, "lat_lngs": [
+			{ "lat_lng": [54.888937, -81.210938],
 				"hint": "This is the hint"
 			},
-			{ "latLng": [-15.422988, -56.865234],
+			{ "lat_lng": [-15.422988, -56.865234],
 				"hint": "This is another one"
 			}
 		],
-		"mapDisplay":false,
+		"map_display":false,
 		"description": "This is the description of the challenge"
 	}]
 },
@@ -35,12 +35,12 @@
 	"show":false,
 	"challenges": [{
 		"name": "challenge",
-		"hasLocation":true, "latLngs": [
-			{ "latLng": [80,25],
+		"has_location":true, "lat_lngs": [
+			{ "lat_lng": [80,25],
 				"hint": "This is the hint"
 			}
 		],
-		"mapDisplay":false,
+		"map_display":false,
 		"description": "This is the description of the challenge"
 	}]
 },
@@ -50,15 +50,15 @@
 	"show":false,
 	"challenges": [{
 		"name": "challenge",
-		"hasLocation":true, "latLngs": [
-			{ "latLng": [80,25],
+		"has_location":true, "lat_lngs": [
+			{ "lat_lng": [80,25],
 				"hint": "This is the hint"
 			},
-			{ "latLng": [45,25],
+			{ "lat_lng": [45,25],
 				"hint": "This is another one"
 			}
 		],
-		"mapDisplay":false,
+		"map_display":false,
 		"description": "This is the description of the challenge"
 	}]
 },
@@ -68,15 +68,15 @@
 	"show":false,
 	"challenges": [{
 		"name": "challenge",
-		"hasLocation":true, "latLngs": [
-			{ "latLng": [80,25],
+		"has_location":true, "lat_lngs": [
+			{ "lat_lng": [80,25],
 				"hint": "This is the hint"
 			},
-			{ "latLng": [45,25],
+			{ "lat_lng": [45,25],
 				"hint": "This is another one"
 			}
 		],
-		"mapDisplay":false,
+		"map_display":false,
 		"description": "This is the description of the challenge"
 	}]
 },
@@ -86,15 +86,15 @@
 	"show":false,
 	"challenges": [{
 		"name": "challenge",
-		"hasLocation":true, "latLngs": [
-			{ "latLng": [80,25],
+		"has_location":true, "lat_lngs": [
+			{ "lat_lng": [80,25],
 				"hint": "This is the hint"
 			},
-			{ "latLng": [45,25],
+			{ "lat_lng": [45,25],
 				"hint": "This is another one"
 			}
 		],
-		"mapDisplay":false,
+		"map_display":false,
 		"description": "This is the description of the challenge"
 	}]
 },
@@ -104,15 +104,15 @@
 	"show":false,
 	"challenges": [{
 		"name": "challenge",
-		"hasLocation":true, "latLngs": [
-			{ "latLng": [80,25],
+		"has_location":true, "lat_lngs": [
+			{ "lat_lng": [80,25],
 				"hint": "This is the hint"
 			},
-			{ "latLng": [45,25],
+			{ "lat_lng": [45,25],
 				"hint": "This is another one"
 			}
 		],
-		"mapDisplay":false,
+		"map_display":false,
 		"description": "This is the description of the challenge"
 	}]
 },
@@ -122,15 +122,15 @@
 	"show":false,
 	"challenges": [{
 		"name": "challenge",
-		"hasLocation":true, "latLngs": [
-			{ "latLng": [80,25],
+		"has_location":true, "lat_lngs": [
+			{ "lat_lng": [80,25],
 				"hint": "This is the hint"
 			},
-			{ "latLng": [45,25],
+			{ "lat_lng": [45,25],
 				"hint": "This is another one"
 			}
 		],
-		"mapDisplay":false,
+		"map_display":false,
 		"description": "This is the description of the challenge"
 	}]
 },
@@ -140,15 +140,15 @@
 	"show":false,
 	"challenges": [{
 		"name": "challenge",
-		"hasLocation":true, "latLngs": [
-			{ "latLng": [80,25],
+		"has_location":true, "lat_lngs": [
+			{ "lat_lng": [80,25],
 				"hint": "This is the hint"
 			},
-			{ "latLng": [45,25],
+			{ "lat_lng": [45,25],
 				"hint": "This is another one"
 			}
 		],
-		"mapDisplay":false,
+		"map_display":false,
 		"description": "This is the description of the challenge"
 	}]
 },
@@ -158,15 +158,15 @@
 	"show":false,
 	"challenges": [{
 		"name": "challenge",
-		"hasLocation":true, "latLngs": [
-			{ "latLng": [80,25],
+		"has_location":true, "lat_lngs": [
+			{ "lat_lng": [80,25],
 				"hint": "This is the hint"
 			},
-			{ "latLng": [45,25],
+			{ "lat_lng": [45,25],
 				"hint": "This is another one"
 			}
 		],
-		"mapDisplay":false,
+		"map_display":false,
 		"description": "This is the description of the challenge"
 	}]
 },
@@ -176,15 +176,15 @@
 	"show":false,
 	"challenges": [{
 		"name": "challenge",
-		"hasLocation":true, "latLngs": [
-			{ "latLng": [80,25],
+		"has_location":true, "lat_lngs": [
+			{ "lat_lng": [80,25],
 				"hint": "This is the hint"
 			},
-			{ "latLng": [45,25],
+			{ "lat_lng": [45,25],
 				"hint": "This is another one"
 			}
 		],
-		"mapDisplay":false,
+		"map_display":false,
 		"description": "This is the description of the challenge"
 	}]
 }

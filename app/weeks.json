@@ -3,7 +3,7 @@
 	"active": true,
 	"show":false,
 	"challenges": [{
-		"name": "challenge",
+		"challenge_name": "challenge",
 		"has_location":true, "lat_lngs": [
 			{ "lat_lng": [59.888937, -81.210938],
 				"hint": "This is the hint"
@@ -13,7 +13,7 @@
 			}
 		],
 		"map_display":false,
-		"description": "This is the description of the challenge"
+		"challenge_description": "This is the description of the challenge"
 	},
 	{
 		"name": "challenge 2",
@@ -26,7 +26,7 @@
 			}
 		],
 		"map_display":false,
-		"description": "This is the description of the challenge"
+		"challenge_description": "This is the description of the challenge"
 	}]
 },
 {
@@ -34,14 +34,14 @@
 	"active": false,
 	"show":false,
 	"challenges": [{
-		"name": "challenge",
+		"challenge_name": "challenge",
 		"has_location":true, "lat_lngs": [
 			{ "lat_lng": [80,25],
 				"hint": "This is the hint"
 			}
 		],
 		"map_display":false,
-		"description": "This is the description of the challenge"
+		"challenge_description": "This is the description of the challenge"
 	}]
 },
 {
@@ -49,7 +49,7 @@
 	"active": false,
 	"show":false,
 	"challenges": [{
-		"name": "challenge",
+		"challenge_name": "challenge",
 		"has_location":true, "lat_lngs": [
 			{ "lat_lng": [80,25],
 				"hint": "This is the hint"
@@ -59,7 +59,7 @@
 			}
 		],
 		"map_display":false,
-		"description": "This is the description of the challenge"
+		"challenge_description": "This is the description of the challenge"
 	}]
 },
 {
@@ -67,7 +67,7 @@
 	"active": false,
 	"show":false,
 	"challenges": [{
-		"name": "challenge",
+		"challenge_name": "challenge",
 		"has_location":true, "lat_lngs": [
 			{ "lat_lng": [80,25],
 				"hint": "This is the hint"
@@ -77,7 +77,7 @@
 			}
 		],
 		"map_display":false,
-		"description": "This is the description of the challenge"
+		"challenge_description": "This is the description of the challenge"
 	}]
 },
 {
@@ -85,7 +85,7 @@
 	"active": false,
 	"show":false,
 	"challenges": [{
-		"name": "challenge",
+		"challenge_name": "challenge",
 		"has_location":true, "lat_lngs": [
 			{ "lat_lng": [80,25],
 				"hint": "This is the hint"
@@ -95,7 +95,7 @@
 			}
 		],
 		"map_display":false,
-		"description": "This is the description of the challenge"
+		"challenge_description": "This is the description of the challenge"
 	}]
 },
 {
@@ -103,7 +103,7 @@
 	"active": false,
 	"show":false,
 	"challenges": [{
-		"name": "challenge",
+		"challenge_name": "challenge",
 		"has_location":true, "lat_lngs": [
 			{ "lat_lng": [80,25],
 				"hint": "This is the hint"
@@ -113,7 +113,7 @@
 			}
 		],
 		"map_display":false,
-		"description": "This is the description of the challenge"
+		"challenge_description": "This is the description of the challenge"
 	}]
 },
 {
@@ -121,7 +121,7 @@
 	"active": false,
 	"show":false,
 	"challenges": [{
-		"name": "challenge",
+		"challenge_name": "challenge",
 		"has_location":true, "lat_lngs": [
 			{ "lat_lng": [80,25],
 				"hint": "This is the hint"
@@ -131,7 +131,7 @@
 			}
 		],
 		"map_display":false,
-		"description": "This is the description of the challenge"
+		"challenge_description": "This is the description of the challenge"
 	}]
 },
 {
@@ -139,7 +139,7 @@
 	"active": false,
 	"show":false,
 	"challenges": [{
-		"name": "challenge",
+		"challenge_name": "challenge",
 		"has_location":true, "lat_lngs": [
 			{ "lat_lng": [80,25],
 				"hint": "This is the hint"
@@ -149,7 +149,7 @@
 			}
 		],
 		"map_display":false,
-		"description": "This is the description of the challenge"
+		"challenge_description": "This is the description of the challenge"
 	}]
 },
 {
@@ -157,7 +157,7 @@
 	"active": false,
 	"show":false,
 	"challenges": [{
-		"name": "challenge",
+		"challenge_name": "challenge",
 		"has_location":true, "lat_lngs": [
 			{ "lat_lng": [80,25],
 				"hint": "This is the hint"
@@ -167,7 +167,7 @@
 			}
 		],
 		"map_display":false,
-		"description": "This is the description of the challenge"
+		"challenge_description": "This is the description of the challenge"
 	}]
 },
 {
@@ -175,7 +175,7 @@
 	"active": false,
 	"show":false,
 	"challenges": [{
-		"name": "challenge",
+		"challenge_name": "challenge",
 		"has_location":true, "lat_lngs": [
 			{ "lat_lng": [80,25],
 				"hint": "This is the hint"
@@ -185,7 +185,7 @@
 			}
 		],
 		"map_display":false,
-		"description": "This is the description of the challenge"
+		"challenge_description": "This is the description of the challenge"
 	}]
 }
 ]
